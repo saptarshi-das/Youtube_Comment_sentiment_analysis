@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Sentiment Chart</title>
+</head>
+<body>
+    <div id="pythonValueContainer" data-value="{{ value_from_python }}"></div>
+    <div class="gauge">
+        <div class="tick-marks" id="tickMarks"></div>
+        <div class="video_title">Comments on {{video_title}}</div>
+        <div class="gauge-arrow" id="gaugeArrow"></div>
+        <div class="inner-circle"></div>
+        <div class="rectangle">
+            <div class="compound_score">Sentiment Score: {{ value_from_python }}</div>
+            <div class="negative">-1</div>
+            <div class="positive">1</div>
+        </div>
+        
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
